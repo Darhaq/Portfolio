@@ -12,3 +12,12 @@ themeToggle.addEventListener('click', () => {
 });
 
 themeToggle.textContent = currentTheme === 'dark' ? '🌞' : '🌙';
+
+const backToTop = document.getElementById("backToTop");
+window.onscroll = function () {
+    backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+};
+
+backToTop.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+};
